@@ -6,31 +6,32 @@ import { MouseEvent, useState } from "react";
 interface Props {
   items: string[];
   heading: string;
+  // (item: string) => void
+  onSelectItem: (item: string) => void;
 }
 
-function ListGroup({ items, heading }: Props) {
-  //let items = ["New York", "San Francisco", "Tokyo", "London", "Paris"];
-  /*   items = []; */
-  /*   if (items.length == 0)
+function ListGroup({ items, heading, onSelectItem }: Props) {
+  /*  let items = ["New York", "San Francisco", "Tokyo", "London", "Paris"];
+    items = [];
+   if (items.length == 0)
     return (
       <>
         <h1>List</h1>
         <p>No item(s) found</p>
       </>
-    );
-  const message = items.length === 0 ? <p>No item(s) found</p> : null;
+    ); 
   
+  const message = items.length === 0 ? <p>No item(s) found</p> : null; 
   //***calling inside a function***
   const getMessage = () => {
     const message = items.length === 0 ? <p>No item(s) found</p> : null;
-  }; */
-
+  };
+*/
   //***hook***; hooks allow us to tap into built-in features in react
   //so this is called statehook.
   const [selectedIndex, setSelectedIndex] = useState(-1);
   /*   arr[0]; //variable (selectionIndex)
   arr[1]; //updater function */
-
   //***event handler function***
   const handleClick = (event: MouseEvent) => console.log(event);
 
@@ -53,6 +54,7 @@ function ListGroup({ items, heading }: Props) {
             /* onClick={handleClick} */
             onClick={() => {
               setSelectedIndex(index);
+              onSelectItem(item);
             }}
           >
             {item}
