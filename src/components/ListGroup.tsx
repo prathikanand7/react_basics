@@ -1,7 +1,15 @@
 //import { Fragment } from "react";
 import { MouseEvent, useState } from "react";
-function ListGroup() {
-  let items = ["New York", "San Francisco", "Tokyo", "London", "Paris"];
+
+//***Props***
+// {items: [], heading:string}
+interface Props {
+  items: string[];
+  heading: string;
+}
+
+function ListGroup({ items, heading }: Props) {
+  //let items = ["New York", "San Francisco", "Tokyo", "London", "Paris"];
   /*   items = []; */
   /*   if (items.length == 0)
     return (
@@ -12,22 +20,23 @@ function ListGroup() {
     );
   const message = items.length === 0 ? <p>No item(s) found</p> : null;
   
-  //inside a function
+  //***calling inside a function***
   const getMessage = () => {
     const message = items.length === 0 ? <p>No item(s) found</p> : null;
   }; */
 
-  //hook; hooks allow us to tap into built-in features in react
+  //***hook***; hooks allow us to tap into built-in features in react
   //so this is called statehook.
   const [selectedIndex, setSelectedIndex] = useState(-1);
   /*   arr[0]; //variable (selectionIndex)
   arr[1]; //updater function */
 
-  //event handler function
+  //***event handler function***
   const handleClick = (event: MouseEvent) => console.log(event);
+
   return (
     <>
-      <h1>List</h1>
+      <h1>{heading}</h1>
       {/* {message} */}
       {/* {getMessage()} */}
       {items.length === 0 && <p>No item(s) found</p>}
