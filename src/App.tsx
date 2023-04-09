@@ -1,4 +1,6 @@
-import ListGroup from "./components/ListGroup";
+import Alert from "./components/Alert";
+
+/* import ListGroup from "./components/ListGroup";
 
 function App() {
   let items = ["New York", "San Francisco", "Tokyo", "London", "Paris"];
@@ -13,6 +15,18 @@ function App() {
         heading={"Cities"}
         onSelectItem={handleSelectItem}
       />
+    </div>
+  );
+}
+export default App;
+ */
+function App() {
+  return (
+    <div>
+      <Alert>
+        Hello <span>Ajay</span>
+        {" hello"} {/*html content*/}
+      </Alert>
     </div>
   );
 }
