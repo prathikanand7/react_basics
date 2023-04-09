@@ -1,5 +1,5 @@
-import Alert from "./components/Alert";
-
+/* import Alert from "./components/Alert"; */
+import Button from "./components/Button";
 /* import ListGroup from "./components/ListGroup";
 
 function App() {
@@ -20,13 +20,24 @@ function App() {
 }
 export default App;
  */
-function App() {
+/* function App() {
   return (
     <div>
       <Alert>
         Hello <span>Ajay</span>
-        {" hello"} {/*html content*/}
-      </Alert>
+        {" hello"} /*html content*/
+/*       </Alert>
+    </div>
+  );
+}
+export default App;*/
+
+function App() {
+  return (
+    <div>
+      <Button /* color="primary" */ onClick={() => console.log("clicked")}>
+        My button
+      </Button>
     </div>
   );
 }
